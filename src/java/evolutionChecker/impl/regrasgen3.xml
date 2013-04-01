@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<evolutionRules xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="file:/home/lsd/ra001973/mestrado/verificador/desenvolvimento/genericrules01.xsd">
+    <rule impact="10">
+        <operator type="or">
+			<operator type="none">
+				  <item type="MaintenanceStateInterfaceMod"/>				
+			</operator>
+	        <operator type="xor">
+    	          <item type="QualityofServiceContractMod"/>
+        	      <item type="QualityofServiceContractAdd"/>
+	         </operator>
+             <operator type="none">
+                <item type="SetOfInterfacesAdd"/>
+			 </operator>
+	    </operator>
+    </rule>
+ </evolutionRules>

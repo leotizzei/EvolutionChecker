@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<evolutionRules xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="file:/home/lsd/ra001973/mestrado/verificador/desenvolvimento/genericrules02.xsd">
+    <rule impact="2">
+        <operator type="none">
+            <item type="VersionIdSpecificationSub"/>
+        </operator>
+    </rule>
+    <!-- rule impact="3">
+        <operator type="or">
+            <operator type="and">
+                <operator type="xor">
+                    <item type="QualityofServiceContractMod">
+                        <parameter name="preAsset" type="string" position="0"/>
+                        <parameter name="posAsset" type="string" position="1"/>
+                    </item>
+                    <item type="QualityofServiceContractAdd"/>
+                </operator>
+                <operator type="none">
+                    <item type="MaintenanceStatePortMod"/>
+                </operator>
+            </operator>
+            <operator type="and">
+                <item type="SetOfInterfacesAdd"/>
+                <item type="MaintenanceStateInterfaceMod"/>
+            </operator>
+        </operator>
+    </rule>
+    <rule impact="4">
+        <operator type="or">
+            <item type="InternalDesignMod"/>
+            <item type="InternalDesignSub"/>
+            <item type="InternalDesignAdd"/>
+        </operator>
+    </rule -->
+</evolutionRules>

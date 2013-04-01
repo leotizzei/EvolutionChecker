@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="Asset" type="Asset"/>
+	<xs:complexType name="Asset">
+		<xs:sequence>
+			<xs:element name="accessRights" type="xs:string"/>
+			<xs:element name="date" type="xs:date"/>
+			<xs:element name="id" type="xs:string"/>
+			<xs:element name="name" type="xs:string"/>
+			<xs:element name="short-description" type="xs:string"/>
+			<xs:element name="state" type="xs:string"/>
+			<xs:element name="version" type="xs:string"/>
+			<xs:element name="Solution" type="Solution"/>
+			<xs:element name="Profile" type="Profile"/>
+			<xs:element name="RelatedAsset" type="RelatedAsset"/>
+			<xs:element name="Usage" type="Usage"/>
+			<xs:element name="Classification" type="Classification"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="Solution" type="Solution"/>
+	<xs:complexType name="Solution">
+		<xs:sequence>
+			<xs:element name="Design" type="Design"/>
+			<xs:element name="Artifact" type="Artifact"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="Profile" type="Profile"/>
+	<xs:complexType name="Profile">
+		<xs:sequence>
+			<xs:element name="idHistory" type="xs:string"/>
+			<xs:element name="name" type="xs:string"/>
+			<xs:element name="reference" type="xs:string"/>
+			<xs:element name="versionMajor" type="xs:string"/>
+			<xs:element name="versionMinor" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="Design" type="Design"/>
+	<xs:complexType name="Design">
+		<xs:sequence>
+			<xs:element name="AbstractComponent" type="AbstractComponent"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="AbstractComponent" type="AbstractComponent"/>
+	<xs:complexType name="AbstractComponent">
+		<xs:sequence>
+			<xs:element name="ExternalProperty" type="ExternalProperty"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="Interface" type="Interface"/>
+	<xs:complexType name="Interface">
+		<xs:sequence>
+			<xs:element name="RelatedAsset" type="RelatedAsset"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="ExternalProperty" type="ExternalProperty"/>
+	<xs:complexType name="ExternalProperty">
+		<xs:sequence>
+			<xs:element name="Interface" type="Interface"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="Artifact" type="Artifact"/>
+	<xs:complexType name="Artifact">
+		<xs:sequence>
+			<xs:element name="accessRights" type="xs:string"/>
+			<xs:element name="digestName" type="xs:string"/>
+			<xs:element name="digestValue" type="xs:string"/>
+			<xs:element name="id" type="xs:string"/>
+			<xs:element name="name" type="xs:string"/>
+			<xs:element name="reference" type="xs:string"/>
+			<xs:element name="type" type="xs:string"/>
+			<xs:element name="version" type="xs:string"/>
+			<xs:element name="ArtifactType" type="ArtifactType"/>
+			<xs:element name="ArtifactContext" type="ArtifactContext"/>
+			<xs:element name="ArtifactDependency" type="ArtifactDependency"/>
+			<xs:element name="Description" type="Description"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="ArtifactType" type="ArtifactType"/>
+	<xs:complexType name="ArtifactType">
+		<xs:sequence>
+			<xs:element name="type" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="ArtifactContext" type="ArtifactContext"/>
+	<xs:complexType name="ArtifactContext">
+		<xs:sequence>
+			<xs:element name="contextId" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="ArtifactDependency" type="ArtifactDependency"/>
+	<xs:complexType name="ArtifactDependency">
+		<xs:sequence>
+			<xs:element name="artifactId" type="xs:string"/>
+			<xs:element name="dependencyType" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="Description" type="Description"/>
+	<xs:complexType name="Description">
+		<xs:sequence/>
+	</xs:complexType>
+	<xs:element name="RelatedAsset" type="RelatedAsset"/>
+	<xs:complexType name="RelatedAsset">
+		<xs:sequence>
+			<xs:element name="id" type="xs:string"/>
+			<xs:element name="name" type="xs:string"/>
+			<xs:element name="reference" type="xs:string"/>
+			<xs:element name="relationship" type="RelationshipType"/>
+			<xs:element name="RelationshipType" type="RelationshipType"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="RelationshipType" type="RelationshipType"/>
+	<xs:complexType name="RelationshipType">
+		<xs:sequence>
+			<xs:element name="aggregation" type="xs:string"/>
+			<xs:element name="association" type="xs:string"/>
+			<xs:element name="composition" type="xs:string"/>
+			<xs:element name="dependency" type="xs:string"/>
+			<xs:element name="realization" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="Usage" type="Usage"/>
+	<xs:complexType name="Usage">
+		<xs:sequence>
+			<xs:element name="reference" type="xs:string"/>
+			<xs:element name="ContextRef" type="ContextRef"/>
+			<xs:element name="AssetActivity" type="AssetActivity"/>
+			<xs:element name="ArtifactActivity" type="ArtifactActivity"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="ContextRef" type="ContextRef"/>
+	<xs:complexType name="ContextRef">
+		<xs:sequence>
+			<xs:element name="contextId" type="xs:string"/>
+			<xs:element name="Activity" type="Activity"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="AssetActivity" type="AssetActivity"/>
+	<xs:complexType name="AssetActivity">
+		<xs:sequence>
+			<xs:element name="Activity" type="Activity"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="ArtifactActivity" type="ArtifactActivity"/>
+	<xs:complexType name="ArtifactActivity">
+		<xs:sequence>
+			<xs:element name="artifactId" type="xs:string"/>
+			<xs:element name="contextId" type="xs:string"/>
+			<xs:element name="Activity" type="Activity"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="Activity" type="Activity"/>
+	<xs:complexType name="Activity">
+		<xs:sequence>
+			<xs:element name="id" type="xs:string"/>
+			<xs:element name="reference" type="xs:string"/>
+			<xs:element name="role" type="xs:string"/>
+			<xs:element name="task" type="xs:string"/>
+			<xs:element name="taskType" type="xs:string"/>
+			<xs:element name="VariabilityPointBinding" type="VariabilityPointBinding"/>
+			<xs:element name="Activity" type="Activity" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="Description" type="Description"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="VariabilityPointBinding" type="VariabilityPointBinding"/>
+	<xs:complexType name="VariabilityPointBinding">
+		<xs:sequence>
+			<xs:element name="bindingRule" type="xs:string"/>
+			<xs:element name="varPointId" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="Classification" type="Classification"/>
+	<xs:complexType name="Classification">
+		<xs:sequence>
+			<xs:element name="Context" type="Context"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="Context" type="Context"/>
+	<xs:complexType name="Context">
+		<xs:sequence>
+			<xs:element name="id" type="xs:string"/>
+			<xs:element name="name" type="xs:string"/>
+			<xs:element name="DescriptorGroup" type="DescriptorGroup"/>
+			<xs:element name="Description" type="Description"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="DescriptorGroup" type="DescriptorGroup"/>
+	<xs:complexType name="DescriptorGroup">
+		<xs:sequence>
+			<xs:element name="Descriptor" type="Descriptor"/>
+			<xs:element name="Description" type="Description"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="Descriptor" type="Descriptor"/>
+	<xs:complexType name="Descriptor">
+		<xs:sequence/>
+	</xs:complexType>
+</xs:schema>

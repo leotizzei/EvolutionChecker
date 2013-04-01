@@ -1,0 +1,18 @@
+Ferramenta EvolutionChecker
+Autor: Leonardo Pondian Tizzei
+email: tizzei@ic.unicamp.br
+Instituto de Computação - UNICAMP
+
+Disponível sob a licença EPL-v1.0 (ver epl-v10.html)
+
+INSTALAÇÃO
+- A ferramenta EvolutionChecker não precisa de instalação, desde que exista uma JDK na versão 5 ou superior instalada na 
+máquina.
+
+EXECUÇÃO
+- Executar no terminal: 
+ java -jar EvolutionChecker.jar 
+
+DOCUMENTAÇÃO
+- Um relatório técnico sobre a ferramenta encontra-se em doc/evolutionTR3.pdf. Neste relatório são descritos desde o 
+motivo pelo qual a ferramenta foi desenvolvida, até exemplos de como executá-la.

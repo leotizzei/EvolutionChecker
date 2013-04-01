@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!DOCTYPE evolutionRules>
+<evolutionRules xmlns="http://www.ic.unicamp.br/~ra001973/">
+	<abstractComponent>
+		<setOfInterfaces id="1" modification="rule1" addition="medium" subtraction="rule4"/>
+		<typeOfProvidedInterface id="2" modification="rule3" addition="medium" subtraction="na"/>
+		<typeOfRequiredInterface id="3" modification="rule3" addition="high" subtraction="medium"/>
+		<maintenanceStateInterface id="4" modification="high" addition="na" subtraction="na"/>
+		<setOfPorts id="5" modification="rule2" addition="medium" subtraction="rule4"/>
+		<setOfInterfacesofAPorts id="6" modification="rule1" addition="medium" subtraction="rule4"/>
+		<maintenanceStateOfAPort id="7" modification="high" addition="na" subtraction="na"/>
+		<targetPlatform id="8" modification="high" addition="na" subtraction="na"/>
+		<synchronizationContract id="9" modification="high" addition="medium" subtraction="na"/>
+		<qosContract id="10" modification="medium" addition="medium" subtraction="na"/>
+	</abstractComponent>
+	<concreteComponent>
+		<versionIdOfSpec id="1" modification="rule8" addition="na" subtraction="na"/>	
+		<internalDesign id="2" modification="medium" addition="na" subtraction="na"/>
+		<sourceCode id="3" modification="low" addition="na" subtraction="na"/>
+		<setOfSubComponents id="4" modification="rule9" addition="high" subtraction="low"/>
+		<setOfExternalTools id="5" modification="rule9" addition="high" subtraction="low"/>
+		<setOfTools id="6" modification="rule9" addition="low" subtraction="low"/>		
+	</concreteComponent>
+</evolutionRules>

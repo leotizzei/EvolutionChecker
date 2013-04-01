@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<evolutionRules xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="file:/home/lsd/ra001973/mestrado/verificador/desenvolvimento/evolrules.xsd">
+    <concreteComponent>
+        <versionIdSpecification subtraction="na" addition="na" modification="rule8"
+            path="descendant::Implementation" profile="abstractcomponent" typeofrule="attribute(version)"/>
+        <!-- originalmente o elemento internaldesign representava as alteracoes nas conexoes
+        de interfaces e portas. Como nao existe adicao ou remocao de um design interno, entretanto
+        eh possivel adicionar conexoes a ele, todas as operacoes receberam o mesmo impacto que 
+        a operacao de modificacao, ou seja, todas tem impacto medio-->
+        <internalDesign subtraction="medium" addition="medium" modification="medium"
+            path="descendant::subcomponent/parent=interfaceconnection" profile="concretecomponent" typeofrule="element"/>
+        <internalDesign subtraction="medium" addition="medium" modification="medium"
+            path="serviceconnection*subcomponent" profile="concretecomponent" typeofrule="element"/>
+        <sourceCode subtraction="na" addition="na" modification="low" path="elementarycomponent*artifact*(name,version,id)" profile="concretecomponent" typeofrule="attribute"/>
+        <setSubComponents subtraction="low" addition="high" modification="rule9" path="componentbasedview*SubComponent" profile="concretecomponent" typeofrule="element"/>
+        <setExternalLibraries subtraction="low" addition="high" modification="rule9"
+            path="ArtifactDependency" profile="any" typeofrule="element"/>
+        <setOfTools subtraction="low" addition="low" modification="rule9" path="ArtifactDependency" profile="any" typeofrule="element"
+        />
+    </concreteComponent>
+    <abstractComponent>
+        
+        <qosContract subtraction="na" addition="medium" modification="medium"
+            path="qualityofservicecontract" profile="abstractcomponent" typeofrule="element"/>
+        <changeInterfaceType subtraction="na" addition="na" modification="rule1"
+            path="interface*relatedasset*(reference)" profile="abstractcomponent" typeofrule="attribute"/>
+         <synchronizationContract subtraction="na" addition="medium" modification="high"
+            path="synchronizationContract" profile="abstractcomponent" typeofrule="element"/>
+        <targetPlatform subtraction="na" addition="na" modification="high" path="AbstractComponent*(targetplatform)" profile="abstractcomponent" typeofrule="attribute"/>
+        <maintenanceStatePort subtraction="na" modification="high" addition="na" path="Port*(state)" profile="abstractcomponent" typeofrule="attribute"/>
+        <setOfInterfacesofAPort subtraction="rule4" addition="medium" modification="rule2" 
+            path="Port*Interface" profile="abstractcomponent" typeofrule="element"/>
+        <setOfPorts subtraction="rule4" addition="medium" modification="rule2" path="Port" profile="abstractcomponent" typeofrule="element"/>
+        <maintenanceStateInterface subtraction="na" addition="na" modification="high"
+            path="contextdependency*interface*(state)" profile="abstractcomponent" typeofrule="attribute"/>
+        <typeOfRequiredInterface subtraction="medium" addition="high" modification="rule3-1"
+            path="InterfaceDefinition*Operation*Parameter" profile="interfacedefinition" typeofrule="element"/>
+        <typeOfProvidedInterface modification="rule3-2" subtraction="na" addition="medium"
+            path="InterfaceDefinition*Operation*Parameter" profile="interfacedefinition" typeofrule="element"/>
+        <!-- rule3-2 modification="na" addition="medium" subtraction="na" path="Operation"/ -->
+        <setOfInterfaces addition="medium" subtraction="rule4" modification="na"
+            path="contextdependency*interface" profile="abstractcomponent" typeofrule="element"/>
+       </abstractComponent>
+</evolutionRules>
